@@ -53,7 +53,6 @@ class ConsoleHandler {
 
           default:
             if (args[i].contains(".txt")) {
-              System.out.println(args[i]);
               this.files.add(args[i]);
             } else if (args[i - 1].contains("-p") && args[i - 1].contains("-o")) {
               System.err.println("Given option: " + args[i] + " is unknown");
@@ -132,8 +131,6 @@ class ConsoleHandler {
 
   public void start(String[] args) {
     this.processOptions(args);
-
-    System.out.println(this.path);
 
     if (this.files.size() == 0) {
       System.err.println("Files to filter are not provided");
